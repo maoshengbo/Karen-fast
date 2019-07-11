@@ -47,7 +47,7 @@ import com.ruoyi.common.utils.text.Convert;
 import com.ruoyi.framework.aspectj.lang.annotation.Excel;
 import com.ruoyi.framework.aspectj.lang.annotation.Excel.Type;
 import com.ruoyi.framework.aspectj.lang.annotation.Excels;
-import com.ruoyi.framework.config.RuoYiConfig;
+import com.ruoyi.framework.config.KaRenConfig;
 import com.ruoyi.framework.web.domain.AjaxResult;
 
 /**
@@ -655,7 +655,7 @@ public class ExcelUtil<T>
      */
     public String getAbsoluteFile(String filename)
     {
-        String downloadPath = RuoYiConfig.getDownloadPath() + filename;
+        String downloadPath = KaRenConfig.getDownloadPath() + filename;
         File desc = new File(downloadPath);
         if (!desc.getParentFile().exists())
         {

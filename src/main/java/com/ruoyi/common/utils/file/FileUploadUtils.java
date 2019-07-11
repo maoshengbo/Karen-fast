@@ -10,7 +10,7 @@ import com.ruoyi.common.exception.file.InvalidExtensionException;
 import com.ruoyi.common.utils.DateUtils;
 import com.ruoyi.common.utils.Md5Utils;
 import com.ruoyi.common.utils.StringUtils;
-import com.ruoyi.framework.config.RuoYiConfig;
+import com.ruoyi.framework.config.KaRenConfig;
 
 /**
  * 文件上传工具类
@@ -32,7 +32,7 @@ public class FileUploadUtils
     /**
      * 默认上传的地址
      */
-    private static String defaultBaseDir = RuoYiConfig.getProfile();
+    private static String defaultBaseDir = KaRenConfig.getProfile();
 
     private static int counter = 0;
 

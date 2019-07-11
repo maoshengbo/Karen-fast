@@ -13,7 +13,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.common.utils.file.FileUploadUtils;
 import com.ruoyi.common.utils.file.FileUtils;
-import com.ruoyi.framework.config.RuoYiConfig;
+import com.ruoyi.framework.config.KaRenConfig;
 import com.ruoyi.framework.config.ServerConfig;
 import com.ruoyi.framework.web.domain.AjaxResult;
 
@@ -51,7 +51,7 @@ public class CommonController
                 throw new Exception(StringUtils.format("文件名称({})非法，不允许下载。 ", fileName));
             }
             String realFileName = System.currentTimeMillis() + fileName.substring(fileName.indexOf("_") + 1);
-            String filePath = RuoYiConfig.getDownloadPath() + fileName;
+            String filePath = KaRenConfig.getDownloadPath() + fileName;
 
             response.setCharacterEncoding("utf-8");
             response.setContentType("multipart/form-data");
@@ -79,7 +79,7 @@ public class CommonController
         try
         {
             // 上传文件路径
-            String filePath = RuoYiConfig.getUploadPath();
+            String filePath = KaRenConfig.getUploadPath();
             // 上传并返回新文件名称
             String fileName = FileUploadUtils.upload(filePath, file);
             String url = serverConfig.getUrl() + UPLOAD_PATH + fileName;
